@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFind | Lost & Found Portal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #142d4e;
+            color: white;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 27px;
+        }
+
+        header span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+        }
+
+        .hero {
+            background: linear-gradient(120deg, #142d4e, #2563a6);
+            color: white;
+            text-align: center;
+            padding: 75px 20px;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            background: #38bdf8;
+            color: #10243e;
+            padding: 13px 25px;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        section {
+            padding: 45px 8%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #142d4e;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        .card h3 {
+            color: #2563a6;
+            margin-bottom: 12px;
+        }
+
+        .form-box {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px #00000015;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 13px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background: #142d4e;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .submit-btn:hover {
+            background: #2563a6;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .item-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px #00000012;
+        }
+
+        .item-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 7px;
+            margin-bottom: 12px;
+        }
+
+        .item-card h3 {
+            color: #142d4e;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            color: #15803d;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .admin-btn {
+            margin-top: 12px;
+            padding: 9px 15px;
+            background: #2563a6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #142d4e;
+            color: white;
+            text-align: center;
+            padding: 22px;
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Campus<span>Find</span></h1>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#report">Report Item</a>
+        <a href="#items">Search Items</a>
+    </nav>
+</header>
+
+<!-- HOME SECTION -->
+
+<div class="hero" id="home">
+    <h2>Lost Something on Campus?</h2>
+
+    <p>
+        Find your lost belongings easily with CampusFind.
+        Report lost and found items in one place.
+    </p>
+
+    <button onclick="location.href='#report'">
+        Report an Item
+    </button>
+</div>
+
+<!-- FEATURES SECTION -->
+
+<section id="features">
+
+    <h2 class="title">Our Features</h2>
+
+    <div class="features">
+
+        <div class="card">
+            <h3>🎓 Student Portal</h3>
+            <p>Students can submit lost and found item reports.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔍 Smart Search</h3>
+            <p>Search for belongings using their names.</p>
+        </div>
+
+        <div class="card">
+            <h3>📸 Photo Upload</h3>
+            <p>Upload item photos for easy identification.</p>
+        </div>
+
+        <div class="card">
+            <h3>🛡️ Verification</h3>
+            <p>Admin can verify reported items.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- REPORT ITEM SECTION -->
+
+<section id="report">
+
+    <h2 class="title">Report Lost / Found Item</h2>
+
+    <div class="form-box">
+
+        <form id="itemForm">
+
+            <input
+                type="text"
+                id="student"
+                placeholder="Student Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Email Address"
+                required
+            >
+
+            <select id="type" required>
+                <option value="">Select Report Type</option>
+                <option value="Lost">Lost Item</option>
+                <option value="Found">Found Item</option>
+            </select>
+
+            <input
+                type="text"
+                id="itemName"
+                placeholder="Item Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="location"
+                placeholder="Location (e.g. Library)"
+                required
+            >
+
+            <textarea
+                id="description"
+                placeholder="Describe the item"
+                required
+            ></textarea>
+
+            <input
+                type="file"
+                id="photo"
+                accept="image/*"
+            >
+
+            <button type="submit" class="submit-btn">
+                Submit Report
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- SEARCH SECTION -->
+
+<section id="items">
+
+    <h2 class="title">Lost & Found Items</h2>
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search items..."
+            oninput="displayItems()"
+        >
+
+    </div>
+
+    <div class="items" id="itemList"></div>
+
+</section>
+
+<!-- ADMIN SECTION -->
+
+<section id="admin">
+
+    <h2 class="title">Admin Verification</h2>
+
+    <div class="form-box">
+
+        <p style="text-align:center;">
+            Review submitted reports and verify the items.
+        </p>
+
+        <div id="adminList"></div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    <h3>CampusFind</h3>
+
+    <p>Smart Campus Lost & Found Management System</p>
+
+    <p>Developed for College Mini Project</p>
+
+    <p>© 2026 CampusFind. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+
+    let items = JSON.parse(
+        localStorage.getItem("campusItems") || "[]"
+    );
+
+    const form = document.getElementById("itemForm");
+
+    form.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const file = document.getElementById("photo").files[0];
+
+        if (file && file.size > 2 * 1024 * 1024) {
+            alert("Please select an image smaller than 2 MB.");
+            return;
+        }
+
+        const saveItem = (image) => {
+
+            const item = {
+
+                id: Date.now(),
+
+                student: document.getElementById("student").value,
+
+                email: document.getElementById("email").value,
+
+                type: document.getElementById("type").value,
+
+                name: document.getElementById("itemName").value,
+
+                location: document.getElementById("location").value,
+
+                description: document.getElementById("description").value,
+
+                image: image,
+
+                verified: false
+
+            };
+
+            items.push(item);
+
+            localStorage.setItem(
+                "campusItems",
+                JSON.stringify(items)
+            );
+
+            alert("Your report was submitted successfully!");
+
+            form.reset();
+
+            displayItems();
+            displayAdmin();
+
+        };
+
+        if (file) {
+
+            const reader = new FileReader();
+
+            reader.onload = function() {
+                saveItem(reader.result);
+            };
+
+            reader.readAsDataURL(file);
+
+        } else {
+
+            saveItem("");
+
+        }
+
+    });
+
+
+    // DISPLAY ITEMS
+
+    function displayItems() {
+
+        const list = document.getElementById("itemList");
+
+        const search = document
+            .getElementById("search")
+            .value.toLowerCase();
+
+        list.innerHTML = "";
+
+        const filtered = items.filter(item =>
+            item.name.toLowerCase().includes(search) &&
+            item.verified
+        );
+
+        if (filtered.length === 0) {
+
+            list.innerHTML = "<p>No verified items found.</p>";
+
+            return;
+
+        }
+
+        filtered.forEach(item => {
+
+            list.innerHTML += `
+
+                <div class="item-card">
+
+                    ${
+                        item.image
+                        ? `<img src="${item.image}" alt="Item photo">`
+                        : ""
+                    }
+
+                    <h3>${escapeHTML(item.name)}</h3>
+
+                    <p><b>Type:</b> ${item.type}</p>
+
+                    <p><b>Student:</b> ${escapeHTML(item.student)}</p>
+
+                    <p><b>Location:</b> ${escapeHTML(item.location)}</p>
+
+                    <p>${escapeHTML(item.description)}</p>
+
+                    <p class="status">✓ Verified</p>
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    // ADMIN VERIFICATION
+
+    function displayAdmin() {
+
+        const adminList = document.getElementById("adminList");
+
+        adminList.innerHTML = "";
+
+        items.forEach(item => {
+
+            adminList.innerHTML += `
+
+                <div class="item-card" style="margin-top:15px;">
+
+                    <h3>${escapeHTML(item.name)}</h3>
+
+                    <p>Type: ${item.type}</p>
+
+                    <p>Location: ${escapeHTML(item.location)}</p>
+
+                    <p>Status:
+                        ${item.verified ? "Verified" : "Pending"}
+                    </p>
+
+                    ${
+                        !item.verified
+                        ? `<button class="admin-btn"
+                            onclick="verifyItem(${item.id})">
+                            Verify Item
+                           </button>`
+                        : ""
+                    }
+
+                </div>
+
+            `;
+
+        });
+
+    }
+
+
+    function verifyItem(id) {
+
+        const item = items.find(item => item.id === id);
+
+        if (item) {
+
+            item.verified = true;
+
+            localStorage.setItem(
+                "campusItems",
+                JSON.stringify(items)
+            );
+
+            alert("Item verified successfully!");
+
+            displayItems();
+            displayAdmin();
+
+        }
+
+    }
+
+
+    function escapeHTML(value) {
+
+        return String(value).replace(/[&<>"']/g, function(char) {
+
+            return {
+                "&": "&amp;",
+                "<": "&lt;",
+                ">": "&gt;",
+                '"': "&quot;",
+                "'": "&#39;"
+
+            }[char];
+
+        });
+
+    }
+
+
+    displayItems();
+    displayAdmin();
+
+</script>
+
+</body>
+</html>
